@@ -1,0 +1,95 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Loop",
+  "patterns": [
+    {
+      "include": "#statements"
+    },
+    {
+      "include": "#expressions"
+    }
+  ],
+  "repository": {
+    "statements": {
+      "patterns": [
+        {
+          "match": "(\\bfun\\b)(\\(.*\\))?",
+          "captures": {
+            "1": {
+              "name": "keyword.function.loop"
+            },
+            "3": {
+              "name": "entity"
+            }
+          }
+        },
+        {
+          "include": "#builtin"
+        }
+      ]
+    },
+
+    "expressions": {
+      "patterns": [
+        {
+          "match": "(var).(\\w*)",
+          "captures": {
+            "1": {
+              "name": "storage.type.loop"
+            },
+            "2": {
+              "name": "entity.name.loop"
+            }
+          }
+        },
+        {
+          "match": "\\b(if|while|for|return)\\b",
+          "name": "keyword.control"
+        },
+        {
+          "include": "#operators"
+        },
+        {
+          "match": "[a-zA-Z_][a-zA-Z0-9_]*",
+          "name": "entity.name.loop"
+        },
+        {
+          "begin": "\\(",
+          "end": "\\)",
+          "name": "meta.brace.round.loop"
+        }
+      ]
+    },
+
+    "builtin": {
+      "patterns": [
+        {
+          "match": "\\b(print|println|len)\\b",
+          "name": "support.function.loop"
+        },
+        {
+          "match": "\\b(true|false)\\b",
+          "name": "constant.language.loop"
+        },
+        {
+          "match": "[0-9]+",
+          "name": "constant.numeric.loop"
+        }
+      ]
+    },
+
+    "operators": {
+      "patterns": [
+        {
+          "match": "\\=\\=|\\>\\=|\\<\\=|\\!\\=",
+          "name": "keyword.operator"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\+|\\-|\\*|\\/|\\>|\\<"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.loop"
+}
