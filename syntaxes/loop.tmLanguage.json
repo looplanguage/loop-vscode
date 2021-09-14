@@ -13,6 +13,10 @@
     "statements": {
       "patterns": [
         {
+          "match": "//.*",
+          "name": "comment.line.double-slash.loop"
+        },
+        {
           "match": "(\\bfun\\b)(\\(.*\\))?",
           "captures": {
             "1": {
