@@ -13,6 +13,23 @@
     "statements": {
       "patterns": [
         {
+          "match": "(import) (\".*\") (as) (\\w*);?",
+          "captures": {
+            "1": {
+              "name": "keyword.control.loop"
+            },
+            "2": {
+              "name": "string.quoted.double.loop"
+            },
+            "3": {
+              "name": "keyword.control.loop"
+            },
+            "4": {
+              "name": "entity.name.loop"
+            }
+          }
+        },
+        {
           "match": "//.*",
           "name": "comment.line.double-slash.loop"
         },
@@ -51,7 +68,7 @@
           }
         },
         {
-          "match": "\\b(if|while|for|return)\\b",
+          "match": "\\b(if|while|for|return|import|as)\\b",
           "name": "keyword.control"
         },
         {
