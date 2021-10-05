@@ -68,7 +68,7 @@
           }
         },
         {
-          "match": "\\b(if|while|for|return|import|as)\\b",
+          "match": "\\b(if|while|for|return|import|export|as)\\b",
           "name": "keyword.control"
         },
         {
