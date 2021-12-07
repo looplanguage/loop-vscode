@@ -3,6 +3,15 @@
     "displayName": "loop-vscode",
     "description": "Syntax highlighting for the Loop programming language",
     "version": "0.0.1",
+    "author": "LoopLanguage",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/looplanguage/loop-vscode.git"
+    },
+    "bugs": {
+        "url": "https://github.com/looplanguage/loop-vscode/issues"
+    },
     "engines": {
         "vscode": "^1.60.0"
     },
@@ -10,7 +19,7 @@
         "Programming Languages"
     ],
     "activationEvents": [
-        "onCommand:loop-vscode.helloWorld"
+        "onLanguage:loop"
     ],
     "main": "./out/extension.js",
     "contributes": {
@@ -25,12 +34,7 @@
             "scopeName": "source.loop",
             "path": "./syntaxes/loop.tmLanguage.json"
         }],
-        "commands": [
-			{
-				"command": "loop-vscode.helloWorld",
-				"title": "Hello World"
-			}
-        ]
+        "commands": []
     },
     "scripts": {
 		"vscode:prepublish": "npm run compile",
